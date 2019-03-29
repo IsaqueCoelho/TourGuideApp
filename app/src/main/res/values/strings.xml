@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TourGuideApp</string>
+    <string name="title_news">News</string>
+    <string name="title_hotels">Hotels</string>
+    <string name="title_restaurants">Restaurants</string>
+    <string name="msg_imageview_description">Image News</string>
+</resources>
