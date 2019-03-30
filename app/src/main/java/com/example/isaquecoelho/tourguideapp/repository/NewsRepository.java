@@ -43,6 +43,27 @@ public class NewsRepository {
                 "http://noticiasdehortolandia.com.br/cidade/dell-esta-com-nova-oportunidade-de-emprego-em-hortolandia/"
         ));
 
+        newsDataSet.add(new News(
+                "Notícias de Hortolândia",
+                "Aulas gratuitas de natação e hidroginástica: faça sua inscrição",
+                R.drawable.ic_news_second,
+                "http://noticiasdehortolandia.com.br/cidade/aulas-gratuitas-de-natacao-e-hidroginastica-faca-sua-inscricao/"
+        ));
+
+        newsDataSet.add(new News(
+                "Notícias de Hortolândia",
+                "Semana começa com chuva, ventos, raios e granizo em Hortolândia",
+                R.drawable.ic_news_third,
+                "http://noticiasdehortolandia.com.br/cidade/semana-comeca-com-chuva-raios-e-granizo-em-hortolandia/"
+        ));
+
+        newsDataSet.add(new News(
+                "Notícias de Hortolândia",
+                "Alunos da rede municipal receberão material escolar no início das aulas",
+                R.drawable.ic_news_fourth,
+                "http://noticiasdehortolandia.com.br/cidade/alunos-da-rede-municipal-receberao-material-escolar-no-inicio-das-aulas/"
+        ));
+
     }
 
 }
