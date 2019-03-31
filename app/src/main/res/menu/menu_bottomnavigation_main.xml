@@ -16,4 +16,9 @@
         android:icon="@drawable/ic_round_restaurant_white_48"
         android:title="@string/title_restaurants" />
 
+    <item
+        android:id="@+id/bottomnavigation_parks"
+        android:icon="@drawable/ic_round_local_florist_white_48"
+        android:title="Parks" />
+
 </menu>

@@ -1,16 +1,19 @@
 package com.example.isaquecoelho.tourguideapp.repository;
 
 import android.arch.lifecycle.MutableLiveData;
+import android.content.Context;
 
 import com.example.isaquecoelho.tourguideapp.R;
 import com.example.isaquecoelho.tourguideapp.model.News;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class NewsRepository {
 
     private static NewsRepository instace;
+    private Context context;
     private ArrayList<News> newsDataSet = new ArrayList<>();
 
     public static NewsRepository getInstace(){
@@ -19,6 +22,10 @@ public class NewsRepository {
         }
 
         return instace;
+    }
+
+    public void setContext(Context context) {
+        this.context = context;
     }
 
     public void clearNewsList(){
@@ -37,34 +44,23 @@ public class NewsRepository {
 
     private void buildNewsList(){
 
-        newsDataSet.add(new News(
-                "Notícias de Hortolândia",
-                "Dell está com nova oportunidade de emprego em Hortolândia",
-                R.drawable.ic_news_first,
-                "http://noticiasdehortolandia.com.br/cidade/dell-esta-com-nova-oportunidade-de-emprego-em-hortolandia/"
-        ));
+        List<String> descriptionList = Arrays.asList(context.getResources().getStringArray(R.array.array_news_description));
+        List<String> linkList = Arrays.asList(context.getResources().getStringArray(R.array.array_news_description));
+        List<Integer> imageList = new ArrayList<>();
 
-        newsDataSet.add(new News(
-                "Notícias de Hortolândia",
-                "Aulas gratuitas de natação e hidroginástica: faça sua inscrição",
-                R.drawable.ic_news_second,
-                "http://noticiasdehortolandia.com.br/cidade/aulas-gratuitas-de-natacao-e-hidroginastica-faca-sua-inscricao/"
-        ));
+        imageList.add(R.drawable.ic_news_first);
+        imageList.add(R.drawable.ic_news_second);
+        imageList.add(R.drawable.ic_news_third);
+        imageList.add(R.drawable.ic_news_fourth);
 
-        newsDataSet.add(new News(
-                "Notícias de Hortolândia",
-                "Semana começa com chuva, ventos, raios e granizo em Hortolândia",
-                R.drawable.ic_news_third,
-                "http://noticiasdehortolandia.com.br/cidade/semana-comeca-com-chuva-raios-e-granizo-em-hortolandia/"
-        ));
+        for (int countItem = 0; countItem < descriptionList.size(); countItem++) {
 
-        newsDataSet.add(new News(
-                "Notícias de Hortolândia",
-                "Alunos da rede municipal receberão material escolar no início das aulas",
-                R.drawable.ic_news_fourth,
-                "http://noticiasdehortolandia.com.br/cidade/alunos-da-rede-municipal-receberao-material-escolar-no-inicio-das-aulas/"
-        ));
-
+            newsDataSet.add(new News(
+                    context.getString(R.string.array_news_title),
+                    descriptionList.get(countItem),
+                    imageList.get(countItem),
+                    linkList.get(countItem)
+            ));
+        }
     }
-
 }

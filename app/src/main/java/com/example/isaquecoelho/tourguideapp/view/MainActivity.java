@@ -67,6 +67,14 @@ public class MainActivity extends AppCompatActivity {
                 bottomNavigationView.getMenu().getItem(2).setChecked(true);
                 fragmentTransaction.replace(R.id.linearLayout_container, new RestaurantFragment());
                 break;
+            case R.id.bottomnavigation_parks:
+                bottomNavigationView.getMenu().getItem(3).setChecked(true);
+                fragmentTransaction.replace(R.id.linearLayout_container, new ParkFragment());
+                break;
+            default:
+                bottomNavigationView.getMenu().getItem(0).setChecked(true);
+                fragmentTransaction.replace(R.id.linearLayout_container, new NewsFragment());
+                break;
         }
 
         fragmentTransaction.commit();

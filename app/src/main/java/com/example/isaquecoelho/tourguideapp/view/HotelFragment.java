@@ -47,7 +47,7 @@ public class HotelFragment extends Fragment {
         mHotelViewModel = ViewModelProviders.of(this).get(HotelViewModel.class);
         // TODO: Use the ViewModel
 
-        mHotelViewModel.init();
+        mHotelViewModel.init(getContext());
         mHotelViewModel.getmHotelList().observe(this, new Observer<List<Hotel>>() {
             @Override
             public void onChanged(@Nullable List<Hotel> hotels) {

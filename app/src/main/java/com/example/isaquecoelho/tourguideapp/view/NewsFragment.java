@@ -47,7 +47,7 @@ public class NewsFragment extends Fragment {
         mNewsViewModel = ViewModelProviders.of(this).get(NewsViewModel.class);
         // TODO: Use the ViewModel
 
-        mNewsViewModel.init();
+        mNewsViewModel.init(getContext());
         mNewsViewModel.getNewsList().observe(this, new Observer<List<News>>() {
             @Override
             public void onChanged(@Nullable List<News> news) {

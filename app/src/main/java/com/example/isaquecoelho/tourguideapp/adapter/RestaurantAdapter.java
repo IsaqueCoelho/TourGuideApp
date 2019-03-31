@@ -48,11 +48,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
                 String queryLatLon =
                         restaurant.getRestaurantLatitude() + "," + restaurant.getRestaurantLongitude();
 
-                String query = "geo:"
-                        + queryLatLon
-                        + "?q="
-                        + queryLatLon
-                        + "(" + restaurant.getRestaurantName() + ")";
+                String query = "geo:" + queryLatLon + "?z=10&q=" + queryLatLon;
 
                 mCardViewOnClickListener.cardOnClick(query);
             }

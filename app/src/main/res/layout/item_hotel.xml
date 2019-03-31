@@ -14,11 +14,8 @@
 
         <ImageView
             android:id="@+id/imageview_hotelimage"
+            style="@style/ImageItem"
             android:layout_width="wrap_content"
-            android:layout_height="77dp"
-            android:src="@drawable/ic_hotel_first"
-            android:scaleType="fitXY"
-            android:adjustViewBounds="true"
             android:contentDescription="@string/msg_imageview_description" />
 
         <LinearLayout
@@ -30,55 +27,45 @@
 
             <TextView
                 android:id="@+id/textview_hotelname"
+                style="@style/TitleItem"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="@dimen/title_text"
-                android:text="Assay Plaza Hotel" />
+                android:layout_height="wrap_content" />
 
             <LinearLayout
+                style="@style/LineItem"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
                 <TextView
+                    style="@style/TitleItem.topic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/body_text"
-                    android:layout_marginTop="@dimen/soft_margin"
-                    android:textStyle="bold"
                     android:text="@string/msg_textview_avaliation" />
 
                 <TextView
                     android:id="@+id/textview_hotelavaliation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/body_text"
-                    android:layout_marginTop="@dimen/soft_margin"
-                    android:text="5 stars" />
+                    android:textSize="@dimen/body_text"/>
 
             </LinearLayout>
 
             <LinearLayout
+                style="@style/LineItem"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
                 <TextView
+                    style="@style/TitleItem.topic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/body_text"
-                    android:layout_marginTop="@dimen/soft_margin"
-                    android:textStyle="bold"
                     android:text="@string/msg_textview_price" />
 
                 <TextView
                     android:id="@+id/textview_hotelprice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/body_text"
-                    android:layout_marginTop="@dimen/soft_margin"
-                    android:text="RS 155,00" />
+                    android:textSize="@dimen/body_text"/>
             </LinearLayout>
 
         </LinearLayout>

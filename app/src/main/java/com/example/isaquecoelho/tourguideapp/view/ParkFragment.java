@@ -16,52 +16,52 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.isaquecoelho.tourguideapp.R;
-import com.example.isaquecoelho.tourguideapp.adapter.RestaurantAdapter;
-import com.example.isaquecoelho.tourguideapp.model.Restaurant;
-import com.example.isaquecoelho.tourguideapp.viewModel.RestaurantViewModel;
+import com.example.isaquecoelho.tourguideapp.adapter.ParkAdapter;
+import com.example.isaquecoelho.tourguideapp.model.Park;
+import com.example.isaquecoelho.tourguideapp.viewModel.ParkViewModel;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class RestaurantFragment extends Fragment {
+public class ParkFragment extends Fragment {
 
-    private RestaurantViewModel mRestaurantViewModel;
-    private RestaurantAdapter mRestaurantAdapter;
+    private ParkViewModel mParkViewModel;
+    private ParkAdapter mParkAdapter;
 
-    @BindView(R.id.recyclerview_restaurantlist)
-    RecyclerView recyclerViewRestaurantList;
+    @BindView(R.id.recyclerview_parklist)
+    RecyclerView recyclerViewParkList;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        View restaurantFragmentView = inflater.inflate(R.layout.restaurant_fragment, container, false);
-        ButterKnife.bind(this, restaurantFragmentView);
+        View parkView = inflater.inflate(R.layout.park_fragment, container, false);
+        ButterKnife.bind(this, parkView);
 
-        return restaurantFragmentView;
+        return parkView;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mRestaurantViewModel = ViewModelProviders.of(this).get(RestaurantViewModel.class);
+        mParkViewModel = ViewModelProviders.of(this).get(ParkViewModel.class);
 
-        mRestaurantViewModel.init(getContext());
-        mRestaurantViewModel.getmRestaurantList().observe(this, new Observer<List<Restaurant>>() {
+        mParkViewModel.init(getContext());
+        mParkViewModel.getmParkList().observe(this, new Observer<List<Park>>() {
             @Override
-            public void onChanged(@Nullable List<Restaurant> restaurants) {
-                mRestaurantAdapter.notifyDataSetChanged();
+            public void onChanged(@Nullable List<Park> parks) {
+                mParkAdapter.notifyDataSetChanged();
             }
         });
-
+        
         initRecyclerView();
     }
 
     private void initRecyclerView() {
 
-        mRestaurantAdapter = new RestaurantAdapter(mRestaurantViewModel.getmRestaurantList().getValue(), new RestaurantAdapter.CardViewOnClickListener() {
+        mParkAdapter = new ParkAdapter(mParkViewModel.getmParkList().getValue(), new ParkAdapter.CardViewOnClickListener() {
             @Override
             public void cardOnClick(String query) {
                 try {
@@ -78,8 +78,8 @@ public class RestaurantFragment extends Fragment {
         LinearLayoutManager linearLayoutManager =
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
 
-        recyclerViewRestaurantList.setLayoutManager(linearLayoutManager);
-        recyclerViewRestaurantList.setAdapter(mRestaurantAdapter);
+        recyclerViewParkList.setLayoutManager(linearLayoutManager);
+        recyclerViewParkList.setAdapter(mParkAdapter);
     }
 
 }

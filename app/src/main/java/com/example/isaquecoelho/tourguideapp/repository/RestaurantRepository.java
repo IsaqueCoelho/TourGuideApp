@@ -1,14 +1,18 @@
 package com.example.isaquecoelho.tourguideapp.repository;
 
 import android.arch.lifecycle.MutableLiveData;
+import android.content.Context;
 
+import com.example.isaquecoelho.tourguideapp.R;
 import com.example.isaquecoelho.tourguideapp.model.Restaurant;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class RestaurantRepository {
 
+    private Context context;
     private static RestaurantRepository restaurantRepositoryInstance;
     private ArrayList<Restaurant> restaurantDataSet = new ArrayList<>();
 
@@ -17,6 +21,10 @@ public class RestaurantRepository {
             restaurantRepositoryInstance = new RestaurantRepository();
         }
         return restaurantRepositoryInstance;
+    }
+
+    public void setContext(Context context) {
+        this.context = context;
     }
 
     public void clearRestaurantList(){
@@ -35,29 +43,21 @@ public class RestaurantRepository {
 
     private void buildRestaurantList(){
 
-        restaurantDataSet.add(new Restaurant(
-                "D'Gust Bar & Restaurante",
-                " 4.7 Stars",
-                " Mon - Sat (11:00 am - 03:00 pm)",
-                "-22.865545",
-                "-47.214358"
-        ));
+        List<String> restaurantNameList = Arrays.asList(context.getResources().getStringArray(R.array.array_restaurant_name));
+        List<String> restaurantAvaliationList = Arrays.asList(context.getResources().getStringArray(R.array.array_restaurant_avaliation));
+        List<String> restaurantScheduleList = Arrays.asList(context.getResources().getStringArray(R.array.array_restaurant_schedule));
+        List<String> restaurantLatitudeList = Arrays.asList(context.getResources().getStringArray(R.array.array_restaurant_latitude));
+        List<String> restaurantLongitudeList = Arrays.asList(context.getResources().getStringArray(R.array.array_restaurant_longitude));
 
-        restaurantDataSet.add(new Restaurant(
-                "Temakeria.com",
-                " 4.5 Stars",
-                " Sun - Sat (11:00am - 03:00 pm; 06:00am - 00:00)",
-                "-22.870660",
-                "-47.202180"
-        ));
+        for (int countItem = 0; countItem < restaurantNameList.size(); countItem++) {
 
-        restaurantDataSet.add(new Restaurant(
-                "Malungo Burger",
-                " 4.6 Stars",
-                " Wed - Sat (06:00pm - 00:00pm)",
-                "-22.865304",
-                "-47.212358"
-        ));
-
+            restaurantDataSet.add(new Restaurant(
+                    restaurantNameList.get(countItem),
+                    restaurantAvaliationList.get(countItem),
+                    restaurantScheduleList.get(countItem),
+                    restaurantLatitudeList.get(countItem),
+                    restaurantLongitudeList.get(countItem)
+            ));
+        }
     }
 }
