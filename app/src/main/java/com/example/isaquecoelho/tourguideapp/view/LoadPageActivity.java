@@ -17,8 +17,6 @@ import butterknife.ButterKnife;
 
 public class LoadPageActivity extends AppCompatActivity {
 
-    private static final String LOG_TAG = "LoadPageActivity";
-
     @BindView(R.id.toolbar_loadpage)
     Toolbar toolbarLoadPage;
 

@@ -10,7 +10,6 @@ import java.util.List;
 
 public class NewsRepository {
 
-
     private static NewsRepository instace;
     private ArrayList<News> newsDataSet = new ArrayList<>();
 
@@ -28,9 +27,11 @@ public class NewsRepository {
 
     // Pretend to get data from a webservice or Firebase
     public MutableLiveData<List<News>> getNewsList(){
+
         buildNewsList();
         MutableLiveData<List<News>> newsData = new MutableLiveData<>();
         newsData.setValue(newsDataSet);
+
         return newsData;
     }
 

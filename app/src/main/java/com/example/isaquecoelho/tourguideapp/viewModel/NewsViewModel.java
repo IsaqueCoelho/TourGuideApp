@@ -12,22 +12,18 @@ import java.util.List;
 public class NewsViewModel extends ViewModel {
 
     private MutableLiveData<List<News>> mNewsList;
-    private NewsRepository mNewsRepository;
 
     public void init(){
         if (mNewsList != null){
             return;
         }
 
-        mNewsRepository = NewsRepository.getInstace();
+        NewsRepository mNewsRepository = NewsRepository.getInstace();
         mNewsRepository.clearNewsList();
         mNewsList = mNewsRepository.getNewsList();
-
     }
-
 
     public LiveData<List<News>> getNewsList(){
         return mNewsList;
     }
-
 }

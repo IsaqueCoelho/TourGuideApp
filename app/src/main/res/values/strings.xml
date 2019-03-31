@@ -4,4 +4,7 @@
     <string name="title_hotels">Hotels</string>
     <string name="title_restaurants">Restaurants</string>
     <string name="msg_imageview_description">Image News</string>
+    <string name="msg_textview_avaliation">Avaliation:</string>
+    <string name="msg_textview_price">Price:</string>
+    <string name="msg_textview_restaurant_schedule">Schedule:</string>
 </resources>

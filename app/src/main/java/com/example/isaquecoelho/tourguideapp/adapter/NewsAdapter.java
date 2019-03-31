@@ -30,7 +30,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsAdapterVie
     @NonNull
     @Override
     public NewsAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View newsView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_news, viewGroup, false);
+        View newsView =
+                LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_news, viewGroup, false);
         return new NewsAdapterViewHolder(newsView);
     }
 
@@ -48,7 +49,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsAdapterVie
                 mCardViewOnClickListener.cardViewClick(news.getNewsLink());
             }
         });
-
     }
 
     @Override

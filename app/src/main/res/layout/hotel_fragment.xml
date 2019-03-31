@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="@dimen/medium_margin"
+    android:paddingTop="@dimen/medium_margin"
+    android:paddingEnd="@dimen/medium_padding"
     tools:context=".view.HotelFragment">
 
-    <TextView
-        android:id="@+id/textview_message"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_hotellist"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/title_hotels" />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

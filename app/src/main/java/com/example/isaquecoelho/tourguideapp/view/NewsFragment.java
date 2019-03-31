@@ -12,7 +12,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.isaquecoelho.tourguideapp.R;
 import com.example.isaquecoelho.tourguideapp.adapter.NewsAdapter;
@@ -31,10 +30,6 @@ public class NewsFragment extends Fragment {
 
     @BindView(R.id.recyclerview_newslist)
     RecyclerView recyclerViewNewsList;
-
-    public static NewsFragment newInstance() {
-        return new NewsFragment();
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
