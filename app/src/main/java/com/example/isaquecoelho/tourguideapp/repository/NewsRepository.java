@@ -16,7 +16,7 @@ public class NewsRepository {
     private Context context;
     private ArrayList<News> newsDataSet = new ArrayList<>();
 
-    public static NewsRepository getInstace(){
+    public static NewsRepository getInstance(){
         if (instace == null){
             instace = new NewsRepository();
         }

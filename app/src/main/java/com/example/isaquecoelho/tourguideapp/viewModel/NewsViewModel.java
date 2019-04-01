@@ -19,7 +19,7 @@ public class NewsViewModel extends ViewModel {
             return;
         }
 
-        NewsRepository mNewsRepository = NewsRepository.getInstace();
+        NewsRepository mNewsRepository = NewsRepository.getInstance();
         mNewsRepository.setContext(context);
         mNewsRepository.clearNewsList();
         mNewsList = mNewsRepository.getNewsList();
